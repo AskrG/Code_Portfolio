@@ -2,6 +2,7 @@
 Eye Tracking: Experiment design and machine learning methods
 Assignment 3
 GAO Fei (22-736-359)
+This file reads data from eye-tracking data (stored in csv files).It uses two different methods (dispersion/velocity) to determine the fixation period, and plot the graph.
 """
 
 from argparse import ArgumentParser, FileType
