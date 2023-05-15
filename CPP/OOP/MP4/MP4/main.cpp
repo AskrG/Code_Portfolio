@@ -1,131 +1,591 @@
+//--------------------------------------------------------------------
 //
-//  main.cpp
-//  MP4
+//                            listlnk.h
 //
-//  Created by Fei Gao on 2022/3/20.
-//
-
-/*
- The center of the circle is a point in the x-y plane. Design a class, circleType, that can store the radius and center of the circle. Because the center is a point in the x-y plane and you designed the class to capture the properties of a point, in addition to the radius member, create a member of type class pointType. You should be able to perform the usual operations on the circle, such as setting the radius, printing the radius, calculating and printing the area and circumference, and carrying out the usual operations on the center.
-  
-
- Also create a Class/Inheritance Diagram which shows your design. An example of how your diagram is attached as a JPEG
-
- */
-
+//--------------------------------------------------------------------
+#pragma warning( disable : 4290 )
+#include <stdexcept>
+#include <new>
+#include <cstring>
+#include <cmath>
+#include <string>
 #include <iostream>
-#include "pointType.h"
-#include "cylinderType.h"
-#include "circleType.h"
+#include <fstream>
 using namespace std;
 
-void inputData(double &, double &, double &, double &);
-void printData(double, double, double, double);
+template < class T >         // Forward declaration of the List class
+class List;
 
-int main() {
-    
-    cout << "Point functions" << endl;
-    pointType Point;
-    
-    //setting the coordinates of the point
-    Point.setXY(5, 6);
-    Point.setX(10);                     //modifying individually
-    Point.setY(7);                      //modifying individually
-    
-    //printing the coordinates of the point
-    Point.print();
-    cout << endl;
-    
-    //returning the x-coordinate
-    cout << "x = " << Point.getX() << ", ";
-    //returning the y-coordinate
-    cout << "y = " << Point.getY() << endl;
-    
-    cout << "Circle functions" << endl;
-    circleType Circle;
-    
-    //setting the radius
-    Circle.setR(10);
-    //printing the radius
-    Circle.pR();
-    cout << endl;
-    
-    //carrying out the usual operations on the center
-    Circle.setXY(5, 2);
-    Circle.setX(9);
-    cout << "x = " << Circle.getX() << endl;
-    Circle.pXY();
-    cout << endl;
-    
-    //calculating and printing the circumference
-    Circle.calC();
-    Circle.pC();
-    cout << endl;
-    //calculating and printing the area
-    Circle.calA();
-    Circle.pA();
-    cout << endl;
-    
-    cout << "Cylinder functions" << endl;
-    cylinderType Cylinder;
+template < class T >
+class ListNode                // Facilitator class for the List class
+{
+private:
 
-    //set the center of the base
-    Cylinder.setXY(5, 8);
-    //set the radius of the base
-    Cylinder.setR(11);
-    //set the height
-    Cylinder.setH(4);
-    
-    //calculating and printing the surface area
-    Cylinder.calS();
-    Cylinder.pS();
-    cout << endl;
-    //calculating and printing the volume
-    Cylinder.calV();
-    Cylinder.pV();
-    cout << endl;
-    
-    //others
-    Cylinder.setCircle(2, 3, 4);
-    cout << "New y = " << Cylinder.getY() << endl;
-    Cylinder.setCylinder(4, 5, 6, 7);
-    cout << "New y = " << Cylinder.getX() << endl;
-    
-    cout << "User Input:" << endl;
-    double n, m, r, h;
-    bool quit = false;
-    string q;
-    while (quit == false)
+    ListNode(const T &nodeData, ListNode *nextPtr);
+    T dataItem;      // List data item
+    ListNode *next;   // Pointer to the next list node
+
+    friend class List<T>;
+};
+
+//--------------------------------------------------------------------
+
+template < class T >
+class List
+{
+public:
+
+    List(int ignored = 0);
+    ~List();
+    void insert(const T &newData) throw (bad_alloc);        // Insert after cursor
+    void remove() throw (logic_error);                      // Remove data item
+    void replace(const T &newData)  throw (logic_error);    // Replace data item
+    void clear();
+
+    bool isEmpty() const;
+    bool isFull() const;
+
+    // List iteration operations
+    void gotoBeginning()   throw (logic_error);
+    void gotoEnd()  throw (logic_error);
+    bool gotoNext();
+    bool gotoPrior();
+    T getCursor() const throw (logic_error);                   // Return item
+    void showStructure() const;
+    void moveToBeginning() throw (logic_error);                    // Move to beginning
+    void insertBefore(const T &newElement)  throw (bad_alloc);  // Insert before cursor
+
+private:
+    ListNode<T> *head,     // Pointer to the beginning of the list
+        *cursor;   // Cursor pointer
+};
+
+//--------------------------------------------------------------------
+//
+//                          listlnk.cpp
+//
+//--------------------------------------------------------------------
+
+template < class T >
+ListNode<T>::ListNode(const T &nodeDataItem, ListNode<T> *nextPtr) : dataItem(nodeDataItem), next(nextPtr)
+{}
+
+//--------------------------------------------------------------------
+
+template < class T >
+List<T>::List(int ignored) : head(0), cursor(0)
+{}
+
+//--------------------------------------------------------------------
+
+template < class T >
+List<T>:: ~List()
+{
+    clear();
+}
+
+//--------------------------------------------------------------------
+
+template < class T >
+void List<T>::insert(const T &newDataItem) throw (bad_alloc)
+{
+    if (head == 0)             // Empty list
     {
-        inputData(n, m, r, h);
-        printData(n, m, r, h);
-        cout << "Input q to quit. Press any key to continue." << endl;
-        cin >> q;
-        if (q == "q")
-            quit = true;
+        head = new ListNode<T>(newDataItem, 0);
+        cursor = head;
     }
-    
-    return 0;
-}
-
-void inputData(double & n, double & m, double & r, double & h)
-{
-    cout << "Enter the x-coordinate, y-coordinate, radius, and height (enter 0 if it is a circle.)" << endl;
-    cin >> n >> m >> r >> h;
-}
-
-void printData(double n, double m, double r, double h)
-{
-    if (h == 0)
+    else                         // After cursor
     {
-        circleType outputCircle(n, m, r);
-        cout << "The circumference of the circle is: " << outputCircle.calC() << "." << endl;
-        cout << "The area of the circle is: " << outputCircle.calA() << "." << endl;
+        cursor->next = new ListNode<T>(newDataItem, cursor->next);
+        cursor = cursor->next;
+    }
+}
+
+//--------------------------------------------------------------------
+
+template < class T >
+void List<T>::remove() throw (logic_error)
+{
+    ListNode<T> *p,   // Pointer to removed node
+        *q;   // Pointer to prior node
+
+     // Requires that the list is not empty
+    if (head == 0)
+        throw logic_error("list is empty");
+
+    if (cursor == head)             // Remove first item
+    {
+        p = head;
+        head = head->next;
+        cursor = head;
+    }
+    else if (cursor->next != 0)     // Remove middle item
+    {
+        p = cursor->next;
+        cursor->dataItem = p->dataItem;
+        cursor->next = p->next;
+    }
+    else                              // Remove last item
+    {
+        p = cursor;
+        for (q = head; q->next != cursor; q = q->next)
+            ;
+        q->next = 0;
+        cursor = head;
+    }
+
+    delete p;
+}
+
+//--------------------------------------------------------------------
+
+template < class T >
+void List<T>::replace(const T &newDataItem) throw (logic_error)
+{
+    if (head == 0)
+        throw logic_error("list is empty");
+
+    cursor->dataItem = newDataItem;
+}
+
+//--------------------------------------------------------------------
+
+template < class T >
+void List<T>::clear()
+{
+    ListNode<T> *p,      // Points to successive nodes
+    *nextP;                  // Points to next node
+    p = head;
+    while (p != 0)
+    {
+        nextP = p->next;
+        delete p;
+        p = nextP;
+    }
+
+    head = 0;
+    cursor = 0;
+}
+
+//--------------------------------------------------------------------
+
+template < class T >
+bool List<T>::isEmpty() const
+{
+    return (head == 0);
+}
+//--------------------------------------------------------------------
+
+template < class T >
+bool List<T>::isFull() const
+{
+    T testDataItem;
+    ListNode<T> *p;
+
+    try
+    {
+        p = new ListNode<T>(testDataItem, 0);
+    }
+    catch (bad_alloc)
+    {
+        return true;
+    }
+
+    delete p;
+    return false;
+}
+
+//--------------------------------------------------------------------
+
+template < class T >
+void List<T>::gotoBeginning() throw (logic_error)
+{
+    if (head != 0)
+        cursor = head;
+    else
+        throw logic_error("list is empty");
+}
+
+//--------------------------------------------------------------------
+
+template < class T >
+void List<T>::gotoEnd() throw (logic_error)
+{
+    if (head != 0)
+        for (; cursor->next != 0; cursor = cursor->next)
+            ;
+    else
+        throw logic_error("list is empty");
+}
+
+//--------------------------------------------------------------------
+
+template < class T >
+bool List<T>::gotoNext()
+{
+    bool result;   // Result returned
+
+    if (cursor->next != 0)
+    {
+        cursor = cursor->next;
+        result = true;
     }
     else
+        result = false;
+
+    return result;
+}
+
+//--------------------------------------------------------------------
+
+template < class T >
+bool List<T>::gotoPrior()
+
+// If the cursor is not at the beginning of a list, then moves the
+// cursor to the preceeding item in the list and returns 1.
+// Otherwise, returns 0.
+
+{
+    ListNode<T> *p;   // Pointer to prior node
+    int result;        // Result returned
+
+    if (cursor != head)
     {
-        cylinderType outputCylinder(n, m, r, h);
-        cout << "The surface area of the circle is: " << outputCylinder.calS() << "." << endl;
-        cout << "The volume of the circle is: " << outputCylinder.calV() << "." << endl;
+        for (p = head; p->next != cursor; p = p->next)
+            ;
+        cursor = p;
+        result = true;
     }
+    else
+        result = false;
+
+    return result;
+}
+
+//--------------------------------------------------------------------
+
+template < class T >
+T List<T>::getCursor() const throw (logic_error)
+{
+    if (head == 0)
+        throw logic_error("list is empty");
+
+    return cursor->dataItem;
+}
+
+//--------------------------------------------------------------------
+
+template < class T >
+void List<T>::showStructure() const
+{
+    ListNode<T> *p;   // Iterates through the list
+
+    if (head == 0)
+        cout << "Empty list" << endl;
+    else
+    {
+        for (p = head; p != 0; p = p->next)
+            if (p == cursor)
+                cout << "[" << p->dataItem << "] ";
+            else
+                cout << p->dataItem << " ";
+        cout << endl;
+    }
+}
+
+//--------------------------------------------------------------------
+
+template < class T >
+void List<T>::moveToBeginning() throw (logic_error)
+
+// Removes the item marked by the cursor from a list and
+// reinserts it at the beginning of the list. Moves the cursor to the
+// beginning of the list.
+{
+    ListNode<T> *p;   //  Pointer to prior node
+                       // Requires that the list is not empty
+    if (head == 0)
+        throw logic_error("list is empty");
+
+    if (cursor != head)
+    {
+        for (p = head; p->next != cursor; p = p->next)
+            ;
+        p->next = cursor->next;
+        cursor->next = head;
+        head = cursor;
+    }
+}
+
+//--------------------------------------------------------------------
+
+template < class T >
+void List<T>::insertBefore(const T &newDataItem)
+throw (bad_alloc)
+
+// Inserts newDataItem before the cursor. If the list is empty, then
+// newDataItem is inserted as the first (and only) item in the list.
+// In either case, moves the cursor to newDataItem.
+
+{
+    if (head == 0)             // Empty list
+    {
+        head = new ListNode<T>(newDataItem, 0);
+        cursor = head;
+    }
+    else                         // Before cursor
+    {
+        cursor->next = new ListNode<T>(cursor->dataItem, cursor->next);
+        cursor->dataItem = newDataItem;
+    }
+}
+
+//--------------------------------------------------------------------
+//                        hashtbl.h
+//--------------------------------------------------------------------
+
+
+template < class T, class KF >
+class HashTbl
+{
+public:
+    HashTbl(int initTableSize);
+    ~HashTbl();
+
+    void insert(const T &newDataItem) throw (bad_alloc);
+    bool remove(KF searchKey);
+    bool retrieve(KF searchKey, T &dataItem);
+    void clear();
+
+    bool isEmpty() const;
+    bool isFull() const;
+
+    void showStructure() const;
+
+private:
+    int tableSize;
+    List<T> *dataTable;
+};
+
+//--------------------------------------------------------------------
+//                        hashtbl.cpp
+//--------------------------------------------------------------------
+
+template < class T, class KF >
+HashTbl<T, KF>::HashTbl(int initTableSize) : tableSize(initTableSize)
+{
+    dataTable = new List<T>[tableSize];
+}
+
+template < class T, class KF >
+HashTbl<T, KF>:: ~HashTbl()
+{
+    delete[] dataTable;
+}
+
+template < class T, class KF >
+void HashTbl<T, KF>::insert(const T &newDataItem) throw (bad_alloc)
+{
+    int index = 0;
+    index = newDataItem.hash(newDataItem.getKey()) % tableSize;
+
+    if (dataTable[index].isEmpty())
+        dataTable[index].insert(newDataItem);
+    else
+    {
+        dataTable[index].gotoBeginning();
+        do
+        {
+            if (dataTable[index].getCursor().getKey() == newDataItem.getKey())
+            {
+                dataTable[index].replace(newDataItem);
+                return;
+            }
+        } while (dataTable[index].gotoNext());
+
+        dataTable[index].insert(newDataItem);
+    }
+}
+
+template < class T, class KF >
+bool HashTbl<T, KF>::remove(KF searchKey)
+{
+    T temp;
+    int index = 0;
+    index = temp.hash(searchKey) % tableSize;
+
+    if (dataTable[index].isEmpty())
+        return false;
+
+    dataTable[index].gotoBeginning();
+    do
+    {
+        if (dataTable[index].getCursor().getKey() == searchKey)
+        {
+            dataTable[index].remove();
+            return true;
+        }
+    } while (dataTable[index].gotoNext());
+
+    return false;
+}
+
+template < class T, class KF >
+bool HashTbl<T, KF>::retrieve(KF searchKey, T &dataItem)
+{
+    // apply two hash functions:
+    // convert string (searchkey) to integer
+    // and use the remainder method (% tableSize) to get the index
+
+    int index = 0;
+    index = dataItem.hash(searchKey) % tableSize;
+
+    if (dataTable[index].isEmpty())
+        return false;
+
+    dataTable[index].gotoBeginning();
+    do
+    {
+        if (dataTable[index].getCursor().getKey() == searchKey)
+        {
+            dataItem = dataTable[index].getCursor();
+            return true;
+        }
+    } while (dataTable[index].gotoNext());
+
+    return false;
+}
+
+template < class T, class KF >
+void HashTbl<T, KF>::clear()
+{
+    for (int i = 0; i<tableSize; i++)
+    {
+        dataTable[i].clear();
+    }
+}
+
+template < class T, class KF >
+bool HashTbl<T, KF>::isEmpty() const
+{
+    for (int i = 0; i<tableSize; i++)
+    {
+        if (!dataTable[i].isEmpty())
+            return false;
+    }
+
+    return true;
+}
+
+template < class T, class KF >
+bool HashTbl<T, KF>::isFull() const
+{
+    for (int i = 0; i<tableSize; i++)
+    {
+        if (!dataTable[i].isFull())
+            return false;
+    }
+
+    return true;
+}
+
+template < class T, class KF >
+void HashTbl<T, KF>::showStructure() const
+{
+    cout << "The Hash Table has the following entries" << endl;
+    for (int i = 0; i<tableSize; i++)
+    {
+        cout << i << ": ";
+        if (dataTable[i].isEmpty())
+            cout << "_";
+        else
+        {
+            dataTable[i].gotoBeginning();
+            do
+            {
+                cout << dataTable[i].getCursor().getKey() << " ";
+            } while (dataTable[i].gotoNext());
+        }
+        cout << endl << endl;
+    }
+}
+
+//--------------------------------------------------------------------
+//                         login.cpp
+//
+//  program that reads in username/login pairs and then
+//  performs authentication of usernames.
+//--------------------------------------------------------------------
+
+//This will be the data stored in the HashTbl (class T)
+struct Password
+{
+    void setKey(string newKey) { username = newKey; }
+    string getKey() const { return username; }
+
+    //this hash converts a string to an integer
+    int hash(const string str) const
+    {
+        int val = 0;
+
+        for (unsigned int i = 0; i<str.length(); i++)
+            val += str[i];
+        return val;
+    }
+    string username,
+        password;
+};
+
+int main()
+{
+    HashTbl<Password, string> passwords(10);
+    Password tempPass;
+    string name;      // user-supplied name
+    string pass;      // user-supplied password
+    //bool userFound;   // is user in table?
+
+        //*********************************************************
+        // Step 1: Read in the password file
+        //*********************************************************
+    ifstream passFile("password.txt");
+
+    if (!passFile)
+    {
+        cout << "Unable to open 'password.txt'!" << endl;
+        exit(0);
+    }
+    passFile >> tempPass.username;
+    
+    while (!passFile.eof() && !passwords.isFull())
+    {
+        passFile  >> tempPass.password;
+        passwords.insert(tempPass);
+        passFile >> tempPass.username;
+    }
+
+    cout << "Printing the hash table:..." << endl;
+    passwords.showStructure();
+    
+
+    //*********************************************************
+    // Step 2: Prompt for a Login and Password and check if valid
+    //*********************************************************
+    cout << "Login: ";
+    while (cin >> name)  // to quit, type CTRL Z in Visual C++
+    {
+        tempPass.username = name;
+        cout << "Password: ";
+        cin >> pass;
+        bool nameexists;
+        nameexists = passwords.retrieve(name, tempPass);
+        if (nameexists && tempPass.password == pass)
+            cout << "Authentication successful" << endl;
+        else
+            cout << "Authentication failure" << endl;
+
+        cout << "Login: ";
+    }
+    cout << endl;
+    
+    return 0;
 }
