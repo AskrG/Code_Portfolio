@@ -1,6 +1,6 @@
-*created at 15-May-2023*
+*created: 15-May-2023*
 
-*last update: 16-May-2023*
+*last updated: 16-May-2023*
 
 # Repository: Machine-Learning
 Contains python projects from 3 courses at UZH, and diverse C++ projects from 2 courses at WCC:
