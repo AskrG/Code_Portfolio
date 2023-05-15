@@ -24,16 +24,10 @@ used two algorithms to determine fixation period from eye-tracking data (in 60Hz
 
 FDS_3_CIFAR-10.ipynb:
 used transfer learning to build a convolutional neural network to tackle the CIFAR-10 dataset (https://www.cs.toronto.edu/~kriz/cifar.html)
-
 FDS_3_MNIST.ipynb:
 built a CNN to classify the handwritten digits from the MNIST dataset (http://yann.lecun.com/exdb/mnist/)
-
 FDS_2.ipynb:
-comparing the Naïve Bayes Classifier (NBC) and Logistic Regression on several datasets. reproduced some of the experimental results in the paper: 
-- On Discriminative vs. Generative classifiers: A comparison of logistic regression and naive Bayes
-- Andrew Y. Ng and Michael I. Jordan
-- Advances in Neural Information Processing Systems (NIPS) 2001.
-
+comparing the Naïve Bayes Classifier (NBC) and Logistic Regression on several datasets. reproduced some of the experimental results in the paper: *On Discriminative vs. Generative classifiers: A comparison of logistic regression and naive Bayes*, by Andrew Y. Ng and Michael I. Jordan.
 FDS_1.ipynb:
 implemented and trained a linear regression model using the least squares method on the winequality dataset using the NumPy library. Learning curves will be plotted to determine if the model is overfitting or underfitting.
 applied the basis expansion to the dataset and trained linear regression models with regularization, i.e., Ridge and Lasso., using the functions from the scikit-learn library.
