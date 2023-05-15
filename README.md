@@ -1,9 +1,10 @@
-# Machine-Learning
-Contains course projects from 3 courses at UZH
+# Repository contents
+Contains course projects from 3 courses at UZH:
 1. four selected files (*iML_w08* - *iML_w12*), from the course 22HS ML Machine Learning - an Interdisciplinary Introduction
 2. a folder "*Eye-tracking*", contained 2 course works from 23FS Eye-trakcing - experiment design and machine learning methods
 3. four team projects projects (*FDS_1* - *FDS_3*) with Zihan ZHANG (Zihan-Zhang) for the course 22HS Foundations of Data Science (Informatics MS core course)
 
+# Goal of each projects
 iML_w12:
 forecast time series data using LSTM RNN
 
