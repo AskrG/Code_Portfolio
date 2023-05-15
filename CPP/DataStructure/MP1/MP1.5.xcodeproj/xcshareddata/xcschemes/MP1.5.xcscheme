@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1330"
+   LastUpgradeVersion = "1320"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E2D8C1D827E6032100746BE4"
-               BuildableName = "MP3"
-               BlueprintName = "MP3"
-               ReferencedContainer = "container:MP3.xcodeproj">
+               BlueprintIdentifier = "E236B80927DC8DCD003805C2"
+               BuildableName = "MP1.5"
+               BlueprintName = "MP1.5"
+               ReferencedContainer = "container:MP1.5.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,7 +36,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/askr/Desktop/Courses/C++2/MP3/MP3"
+      customWorkingDirectory = "/Users/askr/Desktop/Courses/C++2/MP1/MP1.5"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
@@ -45,10 +45,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E2D8C1D827E6032100746BE4"
-            BuildableName = "MP3"
-            BlueprintName = "MP3"
-            ReferencedContainer = "container:MP3.xcodeproj">
+            BlueprintIdentifier = "E236B80927DC8DCD003805C2"
+            BuildableName = "MP1.5"
+            BlueprintName = "MP1.5"
+            ReferencedContainer = "container:MP1.5.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,10 +62,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E2D8C1D827E6032100746BE4"
-            BuildableName = "MP3"
-            BlueprintName = "MP3"
-            ReferencedContainer = "container:MP3.xcodeproj">
+            BlueprintIdentifier = "E236B80927DC8DCD003805C2"
+            BuildableName = "MP1.5"
+            BlueprintName = "MP1.5"
+            ReferencedContainer = "container:MP1.5.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
