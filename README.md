@@ -25,11 +25,30 @@ used two algorithms to determine fixation period from eye-tracking data (in 60Hz
 2000Hz_Trial16_velocity_5.0_pxms_200ms).png:
 the result file from ET_3.py using velocity algorithm
 
-2000Hz_Trial13_dispersion_20.0px_200ms).png
+2000Hz_Trial13_dispersion_20.0px_200ms).png:
 the result file from ET_3.py using dispersion algorithm
 
-ET_5.ipynb
+ET_5.ipynb:
 implemented an SVM model to classify the gender of a reader based on eye-tracking data. Eye-tracking data taken from the Potsdam Textbook Corpus (https://osf.io/dn5hp/files).
 
+FDS series:
+a collaborated team project for the foundations of data science coruse at UZH. My team mate is Zihan ZHANG.
+I have gained permission to put them here as a collaborated project.
 
+FDS_1.ipynb:
+implemented and trained a linear regression model using the least squares method on the winequality dataset using the NumPy library. Learning curves will be plotted to determine if the model is overfitting or underfitting.
+applied the basis expansion to the dataset and trained linear regression models with regularization, i.e., Ridge and Lasso., using the functions from the scikit-learn library.
+
+FDS_2.ipynb:
+Practical 2 : Generative and Discriminative Models
+Reproduced some of the experimental results in the paper by comparing the Naïve Bayes Classifier (NBC) and Logistic Regression on several datasets. 
+On Discriminative vs. Generative classifiers: A comparison of logistic regression and naive Bayes
+Andrew Y. Ng and Michael I. Jordan
+Advances in Neural Information Processing Systems (NIPS) 2001.
+
+FDS_3_MNIST.ipynb:
+built a CNN to classify the handwritten digits from the MNIST dataset (http://yann.lecun.com/exdb/mnist/)
+
+FDS_3_CIFAR-10.ipynb:
+used transfer learning to build a convolutional neural network to tackle the CIFAR-10 dataset (https://www.cs.toronto.edu/~kriz/cifar.html)
 
