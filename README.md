@@ -23,6 +23,7 @@ iML_w08:
 trained an SVM model on court proceeding texts from the European Court of Human Rights and learns whether there has been a violation against a specific article of the European Convention on Human Rights or not
 
 In the Eye-tracking folder:
+
 ET_5.ipynb:
 implemented an SVM model to classify the gender of a reader based on eye-tracking data. Eye-tracking data taken from the Potsdam Textbook Corpus (https://osf.io/dn5hp/files).
 
