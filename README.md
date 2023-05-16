@@ -22,6 +22,7 @@ studied the toxicity of molecules, which are described using the simplified mole
 iML_w08:
 trained an SVM model on court proceeding texts from the European Court of Human Rights and learns whether there has been a violation against a specific article of the European Convention on Human Rights or not
 
+In the Eye-tracking folder:
 ET_5.ipynb:
 implemented an SVM model to classify the gender of a reader based on eye-tracking data. Eye-tracking data taken from the Potsdam Textbook Corpus (https://osf.io/dn5hp/files).
 
@@ -44,3 +45,6 @@ comparing the Naïve Bayes Classifier (NBC) and Logistic Regression on several d
 FDS_1.ipynb:
 implemented and trained a linear regression model using the least squares method on the winequality dataset using the NumPy library. Learning curves will be plotted to determine if the model is overfitting or underfitting.
 applied the basis expansion to the dataset and trained linear regression models with regularization, i.e., Ridge and Lasso., using the functions from the scikit-learn library.
+
+In the CPP folder:
+two folders 'DataStructure' and 'OPP', containing diverse C++ programming 'machine problem' projects.
