@@ -10,6 +10,9 @@ Contains python projects from 3 courses at UZH, and diverse C++ projects from 2 
 4. a folder '*CPP*' (not related to Machine-Learning) contained course works from 2 C++ courses back at the beginning of the year 2022 (Data Structure and Object-Oriented Programming)
 
 # Contents
+
+### introduction to machine learning ###
+
 iML_w12:
 forecast time series data using LSTM RNN
 
@@ -22,7 +25,7 @@ studied the toxicity of molecules, which are described using the simplified mole
 iML_w08:
 trained an SVM model on court proceeding texts from the European Court of Human Rights and learns whether there has been a violation against a specific article of the European Convention on Human Rights or not
 
-In the Eye-tracking folder:
+### Eye-tracking(In the '*Eye-tracking*' folder) ###
 
 ET_5.ipynb:
 implemented an SVM model to classify the gender of a reader based on eye-tracking data. Eye-tracking data taken from the Potsdam Textbook Corpus (https://osf.io/dn5hp/files).
@@ -33,6 +36,8 @@ used two algorithms to determine fixation period from eye-tracking data (in 60Hz
 - the result file from ET_3.py using velocity algorithm
 - 2000Hz_Trial13_dispersion_20.0px_200ms).png:
 - the result file from ET_3.py using dispersion algorithm
+
+### Foundations of Data Science ###
 
 FDS_3_CIFAR-10.ipynb:
 used transfer learning to build a convolutional neural network to tackle the CIFAR-10 dataset (https://www.cs.toronto.edu/~kriz/cifar.html)
@@ -47,5 +52,5 @@ FDS_1.ipynb:
 implemented and trained a linear regression model using the least squares method on the winequality dataset using the NumPy library. Learning curves will be plotted to determine if the model is overfitting or underfitting.
 applied the basis expansion to the dataset and trained linear regression models with regularization, i.e., Ridge and Lasso., using the functions from the scikit-learn library.
 
-In the CPP folder:
+### C++ (in the '*CPP*' folder) ###
 two folders 'DataStructure' and 'OPP', containing diverse C++ programming 'machine problem' projects.
