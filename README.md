@@ -10,7 +10,7 @@ Contains python projects from 3 courses at UZH, and diverse C++ projects from 2 
 4. a folder '*CPP*' (not related to Machine-Learning) contained course works from 2 C++ courses (Data Structure and Object-Oriented Programming)
 
 # Contents
-iML_w12:
+==iML_w12==:
 forecast time series data using LSTM RNN
 
 iML_w11:
