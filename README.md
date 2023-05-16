@@ -11,7 +11,7 @@ Contains python projects from 3 courses at UZH, and diverse C++ projects from 2 
 
 # Contents
 
-### introduction to machine learning ###
+### Machine Learning - an Interdisciplinary Introduction ###
 
 iML_w12:
 forecast time series data using LSTM RNN
