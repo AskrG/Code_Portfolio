@@ -3,11 +3,10 @@
 *last updated: 16-May-2023*
 
 # Repository: Machine-Learning
-Contains python projects from 3 courses at UZH, and diverse C++ projects from 2 courses at WCC:
+Contains python projects from 3 courses at UZH
 1. four selected files (*iML_w08* - *iML_w12*), from the course 22HS ML Machine Learning - an Interdisciplinary Introduction
 2. a folder '*Eye-tracking*', contained 2 course works from 23FS Eye-trakcing - experiment design and machine learning methods
 3. four team projects projects (*FDS_1* - *FDS_3*) with Zihan ZHANG (Zihan-Zhang) for the course 22HS Foundations of Data Science (Informatics MS core course)
-4. a folder '*CPP*' (not related to Machine-Learning) contained course works from 2 C++ courses back at the beginning of the year 2022 (Data Structure and Object-Oriented Programming)
 
 # Contents
 
@@ -51,6 +50,3 @@ comparing the Naïve Bayes Classifier (NBC) and Logistic Regression on several d
 FDS_1.ipynb:
 implemented and trained a linear regression model using the least squares method on the winequality dataset using the NumPy library. Learning curves will be plotted to determine if the model is overfitting or underfitting.
 applied the basis expansion to the dataset and trained linear regression models with regularization, i.e., Ridge and Lasso., using the functions from the scikit-learn library.
-
-### C++ (in the '*CPP*' folder) ###
-two folders 'DataStructure' and 'OPP', containing diverse C++ programming 'machine problem' projects.
