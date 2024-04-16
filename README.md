@@ -10,7 +10,7 @@ Contains python and matlab projects from courses and projects
 4. a folder '*Eye-tracking*', contained 2 course works from 23FS Eye-trakcing - experiment design and machine learning methods
 5. four team projects (*FDS_1* - *FDS_3*) with Zihan ZHANG (Zihan-Zhang) for UZH Informatics MS core course.
 
-Note: Copying or modifying this code for academic purposes will be considered **plagiarism**. Use of codes listed here in your class may lead to legal and academic consequences. 
+Note: Use of some codes listed here in your class will be considered **plagiarism** and may lead to legal and academic consequences.
 
 # Contents
 
