@@ -2,15 +2,6 @@
 
 *last updated: 16-April-2024*
 
-# Plagiarism Warning
-This code is provided for my code interview and anyone who are **not** enrolled in master level courses in courses offered by UZH. Copying or modifying this code for academic purposes will be considered **plagiarism** and is **prohibited**. Use of codes listed here in your class may lead to legal and academic consequences. 
-
-Please refer to the following website for academic integrity:
-
-https://www.cl.uzh.ch/en/studies/studies-BA-MA/academic-rules.html
-
-https://www.research.uzh.ch/en/procedures/integrity.html
-
 # Repository: Fei Code Portfolio
 Contains python and matlab projects from courses and projects
 1. one of the files (*5_train*) from my master's project. (Please contact me for more codes in preprocessing, etc.)
@@ -18,8 +9,8 @@ Contains python and matlab projects from courses and projects
 3. four selected files (*iML_w08* - *iML_w12*), from the course 22HS ML Machine Learning - an Interdisciplinary Introduction
 4. a folder '*Eye-tracking*', contained 2 course works from 23FS Eye-trakcing - experiment design and machine learning methods
 5. four team projects (*FDS_1* - *FDS_3*) with Zihan ZHANG (Zihan-Zhang) for UZH Informatics MS core course.
+Note: Copying or modifying this code for academic purposes will be considered **plagiarism**. Use of codes listed here in your class may lead to legal and academic consequences. 
 
-# Disclamer 
 # Contents
 
 ### 1. NeuroAI project - analyzing iEEG using LLM
