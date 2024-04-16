@@ -3,7 +3,9 @@
 *last updated: 16-April-2024*
 
 # Plagiarism Warning
-This code is provided for my code interview and any other students who are not enrolled in classes at the zurich. Copying or modifying this code for academic purposes will be considered plagiarism and is prohibited. Use of codes listed here in your class may lead to legal and academic consequences.
+This code is provided for my code interview and anyone who are **not** enrolled in master level courses in courses offered by UZH. Copying or modifying this code for academic purposes will be considered **plagiarism** and is **prohibited**. Use of codes listed here in your class may lead to legal and academic consequences. Please refer to the following website for academic integrity:
+https://www.cl.uzh.ch/en/studies/studies-BA-MA/academic-rules.html
+https://www.research.uzh.ch/en/procedures/integrity.html
 
 # Repository: Fei Code Portfolio
 Contains python and matlab projects from courses and projects
