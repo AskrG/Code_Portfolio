@@ -10,6 +10,21 @@ Contains python projects from 3 courses at UZH
 
 # Contents
 
+### NeuroAI project - analyzing iEEG using LLM
+
+5_train:
+Passing data to GPT2 with hugging face API. (Requires update on parameters like 8bit optimizer, but the basic structure is there. Please contact me for more codes)
+
+### EEG analysis - analyzing EEG using basic signal processing packages in python and matlab
+bg_1:
+analyze individual cognitive load using wavebands (Delta band, Alpha band, etc.)
+
+cl_preprocess:
+preprocess EEG data for each participants
+
+cl_report:
+analyze individual musical sensitivity and emotions according to cluster and wavebands.
+
 ### Machine Learning - an Interdisciplinary Introduction ###
 
 iML_w12:
