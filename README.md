@@ -1,31 +1,32 @@
 *created: 15-May-2023*
 
-*last updated: 16-May-2023*
+*last updated: 16-April-2024*
 
-# Repository: Machine-Learning
-Contains python projects from 3 courses at UZH
-1. four selected files (*iML_w08* - *iML_w12*), from the course 22HS ML Machine Learning - an Interdisciplinary Introduction
-2. a folder '*Eye-tracking*', contained 2 course works from 23FS Eye-trakcing - experiment design and machine learning methods
-3. four team projects projects (*FDS_1* - *FDS_3*) with Zihan ZHANG (Zihan-Zhang) for the course 22HS Foundations of Data Science (Informatics MS core course)
+# Repository: Fei Code Portfolio
+Contains python and matlab projects from courses and projects
+1. one of the files (*5_train*) from my master's project. (Please contact me for more codes in preprocessing, etc.)
+2. a folder '*EEG*', from my research intern projects. (Please contact me for more preprocessing codes, etc.)
+3. four selected files (*iML_w08* - *iML_w12*), from the course 22HS ML Machine Learning - an Interdisciplinary Introduction
+4. a folder '*Eye-tracking*', contained 2 course works from 23FS Eye-trakcing - experiment design and machine learning methods
+5. four team projects (*FDS_1* - *FDS_3*) with Zihan ZHANG (Zihan-Zhang) for UZH Informatics MS core course.
 
 # Contents
 
-### NeuroAI project - analyzing iEEG using LLM
-
+### 1. NeuroAI project - analyzing iEEG using LLM
 5_train:
-Passing data to GPT2 with hugging face API. (Requires update on parameters like 8bit optimizer, but the basic structure is there. Please contact me for more codes)
+Passing data to GPT2 with hugging face API. (Requires update on parameters like 8bit optimizer, but the basic structure is there.)
 
-### EEG analysis - analyzing EEG using basic signal processing packages in python and matlab
-bg_1:
+### 2. EEG analysis - analyzing EEG using basic signal processing packages in python and matlab
+bg_analysis:
 analyze individual cognitive load using wavebands (Delta band, Alpha band, etc.)
 
 cl_preprocess:
 preprocess EEG data for each participants
 
-cl_report:
+cl_analysis:
 analyze individual musical sensitivity and emotions according to cluster and wavebands.
 
-### Machine Learning - an Interdisciplinary Introduction ###
+### 3. Machine Learning - an Interdisciplinary Introduction ###
 
 iML_w12:
 forecast time series data using LSTM RNN
@@ -39,7 +40,7 @@ studied the toxicity of molecules, which are described using the simplified mole
 iML_w08:
 trained an SVM model on court proceeding texts from the European Court of Human Rights and learns whether there has been a violation against a specific article of the European Convention on Human Rights or not
 
-### Eye-tracking(In the '*Eye-tracking*' folder) ###
+### 4. Eye-tracking(In the '*Eye-tracking*' folder) ###
 
 ET_5.ipynb:
 implemented an SVM model to classify the gender of a reader based on eye-tracking data. Eye-tracking data taken from the Potsdam Textbook Corpus (https://osf.io/dn5hp/files).
@@ -51,7 +52,7 @@ used two algorithms to determine fixation period from eye-tracking data (in 60Hz
 - 2000Hz_Trial13_dispersion_20.0px_200ms).png:
 - the result file from ET_3.py using dispersion algorithm
 
-### Foundations of Data Science ###
+### 5. Foundations of Data Science ###
 
 FDS_3_CIFAR-10.ipynb:
 used transfer learning to build a convolutional neural network to tackle the CIFAR-10 dataset (https://www.cs.toronto.edu/~kriz/cifar.html)
