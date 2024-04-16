@@ -4,6 +4,7 @@
 
 # Repository: Fei Code Portfolio
 Contains python and matlab projects from courses and projects
+**0: my CV (0_Fei_Gao_CV.pdf)**
 1. one of the files (*5_train*) from my master's project at INI Zurich. (Please contact me for more codes in preprocessing, etc.)
 2. a folder '*EEG*', from my research intern projects at University Hospital and Computational Linguistics department. (Please contact me for more preprocessing codes, etc.)
 3. four selected files (*iML_w08* - *iML_w12*), from the course introduction to ML.
