@@ -2,6 +2,9 @@
 
 *last updated: 16-April-2024*
 
+# Plagiarism Warning
+This code is provided for my code interview and any other students who are not enrolled in classes at the zurich. Copying or modifying this code for academic purposes will be considered plagiarism and is prohibited. Use of codes listed here in your class may lead to legal and academic consequences.
+
 # Repository: Fei Code Portfolio
 Contains python and matlab projects from courses and projects
 1. one of the files (*5_train*) from my master's project. (Please contact me for more codes in preprocessing, etc.)
@@ -10,21 +13,26 @@ Contains python and matlab projects from courses and projects
 4. a folder '*Eye-tracking*', contained 2 course works from 23FS Eye-trakcing - experiment design and machine learning methods
 5. four team projects (*FDS_1* - *FDS_3*) with Zihan ZHANG (Zihan-Zhang) for UZH Informatics MS core course.
 
+# Disclamer 
 # Contents
 
 ### 1. NeuroAI project - analyzing iEEG using LLM
-5_train:
-Passing data to GPT2 with hugging face API. (Requires update on parameters like 8bit optimizer, but the basic structure is there.)
+NeuroAI_5_train:
+Last code, passing data to GPT2 with hugging face API. 
+(Requires update on parameters like 8bit optimizer, but the basic structure is there.)
 
 ### 2. EEG analysis - analyzing EEG using basic signal processing packages in python and matlab
-bg_analysis:
-analyze individual cognitive load using wavebands (Delta band, Alpha band, etc.)
+BG_1_PreprocessAnalysis:
+preprocess and analyze individual cognitive load using wavebands (Delta band, Alpha band, etc.)
 
-cl_preprocess:
+CL_1_Preprocess:
 preprocess EEG data for each participants
 
-cl_analysis:
-analyze individual musical sensitivity and emotions according to cluster and wavebands.
+CL_3_TFR:
+analyze individual musical sensitivity and emotions according to cluster and wavebands
+
+CL_4_Plot:
+align neural data with musical data for report in LaTeX.
 
 ### 3. Machine Learning - an Interdisciplinary Introduction ###
 
@@ -43,7 +51,7 @@ trained an SVM model on court proceeding texts from the European Court of Human 
 ### 4. Eye-tracking(In the '*Eye-tracking*' folder) ###
 
 ET_5.ipynb:
-implemented an SVM model to classify the gender of a reader based on eye-tracking data. Eye-tracking data taken from the Potsdam Textbook Corpus (https://osf.io/dn5hp/files).
+implemented an SVM model to classify the gender of a reader based on eye-tracking data. Eye-tracking data taken from the Potsdam Textbook Corpus (https://osf.io/dn5hp/files)
 
 ET_3.py:
 used two algorithms to determine fixation period from eye-tracking data (in 60Hz and 2000Hz) and plotted the graphs.
