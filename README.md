@@ -4,11 +4,11 @@
 
 # Repository: Fei Code Portfolio
 Contains python and matlab projects from courses and projects
-1. one of the files (*5_train*) from my master's project. (Please contact me for more codes in preprocessing, etc.)
-2. a folder '*EEG*', from my research intern projects. (Please contact me for more preprocessing codes, etc.)
-3. four selected files (*iML_w08* - *iML_w12*), from the course 22HS ML Machine Learning - an Interdisciplinary Introduction
-4. a folder '*Eye-tracking*', contained 2 course works from 23FS Eye-trakcing - experiment design and machine learning methods
-5. four team projects (*FDS_1* - *FDS_3*) with Zihan ZHANG (Zihan-Zhang) for UZH Informatics MS core course.
+1. one of the files (*5_train*) from my master's project at INI Zurich. (Please contact me for more codes in preprocessing, etc.)
+2. a folder '*EEG*', from my research intern projects at University Hospital and Computational Linguistics department. (Please contact me for more preprocessing codes, etc.)
+3. four selected files (*iML_w08* - *iML_w12*), from the course introduction to ML.
+4. a folder '*Eye-tracking*', contained 2 course works from ML methods in eye tracking class.
+5. four team projects (*FDS_1* - *FDS_3*) with Zihan ZHANG (Zihan-Zhang) for Informatics MS core course.
 
 Note: Use of some codes listed here in your class will be considered **plagiarism** and may lead to legal and academic consequences.
 
